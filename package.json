@@ -1,0 +1,17 @@
+{
+  "name": "namviet-fe",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/core-modules",
+    "packages/webapp",
+    "packages/playground"
+  ],
+  "scripts": {
+    "build-all": "yarn workspaces foreach -ptAv run build",
+    "pg:serve": "yarn workspace @nv/playground run storybook",
+    "web:dev": "yarn workspace @nv/webapp run dev"
+  },
+  "author": "rav <vonhan315@gmail.com>",
+  "license": "MIT"
+}

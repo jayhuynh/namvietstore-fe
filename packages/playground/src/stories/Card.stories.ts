@@ -1,14 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
-const Card = () => null;
-
+import type { Meta, StoryObj } from "@storybook/react";
+import { Card } from "@nv/core-modules";
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: 'Example1/Card',
+  title: "@nv/core-modules/Card",
   component: Card,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
 } satisfies Meta<typeof Card>;
 
@@ -19,8 +17,6 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'Button',
+    label: "Button",
   },
 };
-
-

@@ -1,5 +1,5 @@
 {
-  "name": "playground",
+  "name": "@nv/playground",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,6 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@nv/core-modules": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
