@@ -16,6 +16,7 @@
     "format:check": "prettier -c .",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "prepare": "husky install",
+    "plop": "yarn plop",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
