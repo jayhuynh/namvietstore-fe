@@ -36,3 +36,9 @@ yarn-error.log*
 
 # changelog
 CHANGELOG.md
+
+# ignore /pages folder due to currently we only work on components with storybook
+/pages
+
+# ignore .hbs
+*.hbs
