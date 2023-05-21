@@ -43,3 +43,21 @@ export const LeftIcon = {
     size: 'base',
   },
 };
+
+export const Loading = {
+  args: {
+    children: 'Đọc thêm',
+    rightIcon: GoPlus,
+    size: 'base',
+    isLoading: true,
+  },
+};
+
+export const Disabled = {
+  args: {
+    children: 'Đọc thêm',
+    rightIcon: GoPlus,
+    size: 'base',
+    disabled: true,
+  },
+};
