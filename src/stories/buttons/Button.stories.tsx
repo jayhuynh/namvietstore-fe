@@ -7,9 +7,39 @@ export default {
   title: '@nv/components/buttons/Button',
   component: Button,
   args: {
-    children: 'Đọc thêm',
-    rightIcon: GoPlus,
+    variant: 'default',
+    size: 'base',
   },
 } as Meta<typeof Button>;
 
-export const Default = {};
+export const Default = {
+  args: {
+    children: 'Đọc thêm',
+    rightIcon: GoPlus,
+  },
+};
+
+export const Small = {
+  args: {
+    variant: 'default',
+    children: 'Đọc thêm',
+    rightIcon: GoPlus,
+    size: 'small',
+  },
+};
+
+export const Large = {
+  args: {
+    children: 'Đọc thêm',
+    rightIcon: GoPlus,
+    size: 'large',
+  },
+};
+
+export const LeftIcon = {
+  args: {
+    children: 'Đọc thêm',
+    leftIcon: GoPlus,
+    size: 'base',
+  },
+};
