@@ -1,34 +1,63 @@
-import { Meta, StoryFn } from '@storybook/react';
-import * as React from 'react';
+import { Meta } from '@storybook/react';
+import { GoPlus } from 'react-icons/go';
 
 import Button from '@/components/buttons/Button';
 
 export default {
   title: '@nv/components/buttons/Button',
   component: Button,
-  argTypes: {
-    // override React.ReactNode type with this
-    // children: {
-    // control: { type: 'text' },
-    // },
+  args: {
+    variant: 'default',
+    size: 'base',
   },
 } as Meta<typeof Button>;
 
-const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  children: 'Button',
+export const Default = {
+  args: {
+    children: 'Đọc thêm',
+    rightIcon: GoPlus,
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  children: 'Button',
-  size: 'lg',
+export const Small = {
+  args: {
+    variant: 'default',
+    children: 'Đọc thêm',
+    rightIcon: GoPlus,
+    size: 'small',
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  children: 'Button',
-  size: 'sm',
+export const Large = {
+  args: {
+    children: 'Đọc thêm',
+    rightIcon: GoPlus,
+    size: 'large',
+  },
+};
+
+export const LeftIcon = {
+  args: {
+    children: 'Đọc thêm',
+    leftIcon: GoPlus,
+    size: 'base',
+  },
+};
+
+export const Loading = {
+  args: {
+    children: 'Đọc thêm',
+    rightIcon: GoPlus,
+    size: 'base',
+    isLoading: true,
+  },
+};
+
+export const Disabled = {
+  args: {
+    children: 'Đọc thêm',
+    rightIcon: GoPlus,
+    size: 'base',
+    disabled: true,
+  },
 };

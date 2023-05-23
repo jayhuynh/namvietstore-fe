@@ -4,12 +4,11 @@ import { ImSpinner2 } from 'react-icons/im';
 
 import clsxm from '@/lib/clsxm';
 
-const ButtonVariant = ['primary', 'outline', 'ghost', 'light', 'dark'] as const;
-const ButtonSize = ['lg', 'sm', 'base'] as const;
+const ButtonVariant = ['default', 'light', 'dark'] as const;
+const ButtonSize = ['base', 'small', 'large'] as const;
 
 type ButtonProps = {
   isLoading?: boolean;
-  isDarkBg?: boolean;
   variant?: (typeof ButtonVariant)[number];
   size?: (typeof ButtonSize)[number];
   leftIcon?: IconType;
@@ -25,9 +24,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       disabled: buttonDisabled,
       isLoading,
-      variant = 'primary',
+      variant = 'default',
       size = 'base',
-      isDarkBg = false,
       leftIcon: LeftIcon,
       rightIcon: RightIcon,
       leftIconClassName,
@@ -44,45 +42,43 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         type='button'
         disabled={disabled}
         className={clsxm(
-          'inline-flex items-center rounded font-medium',
-          'focus-visible:ring-primary-500 focus:outline-none focus-visible:ring',
-          'shadow-sm',
-          'transition-colors duration-75',
+          'inline-flex items-center rounded-sm text-justify font-normal leading-[19px]',
           //#region  //*=========== Size ===========
           [
-            size === 'base' && ['px-3 py-1.5', 'text-sm md:text-base'],
-            size === 'sm' && ['px-2 py-1', 'text-xs md:text-sm'],
-            size === 'lg' && ['px-5 py-3', 'text-sm md:text-lg'],
+            size === 'base' && [
+              'px-[7px] py-[4px]',
+              'text-[16px]',
+              'h-[40px] w-[105px]',
+            ],
+          ],
+          [
+            size === 'small' && [
+              'px-[8px] py-[5px]',
+              'text-[12px]',
+              'h-[35px] w-[80px]',
+            ],
+          ],
+          [
+            size === 'large' && [
+              'px-[10px] py-[6px]',
+              'text-[18px]',
+              'h-[60px] w-[135px]',
+            ],
           ],
           //#endregion  //*======== Size ===========
           //#region  //*=========== Variants ===========
           [
-            variant === 'primary' && [
-              'bg-primary-500 text-white',
-              'border-primary-600 border',
-              'hover:bg-primary-600 hover:text-white',
-              'active:bg-primary-700',
-              'disabled:bg-primary-700',
-            ],
-            variant === 'outline' && [
-              'text-primary-500',
-              'border-primary-500 border',
-              'hover:bg-primary-50 active:bg-primary-100 disabled:bg-primary-100',
-              isDarkBg &&
-                'hover:bg-gray-900 active:bg-gray-800 disabled:bg-gray-800',
-            ],
-            variant === 'ghost' && [
-              'text-primary-500',
-              'shadow-none',
-              'hover:bg-primary-50 active:bg-primary-100 disabled:bg-primary-100',
-              isDarkBg &&
-                'hover:bg-gray-900 active:bg-gray-800 disabled:bg-gray-800',
+            variant === 'default' && [
+              'bg-[#850000] text-white',
+              'hover:bg-[#b33939] hover:text-white',
+              'active:hover:bg-[#c23616]',
+              'disabled:hover:bg-[#c23616]',
             ],
             variant === 'light' && [
-              'bg-white text-gray-700',
-              'border border-gray-300',
-              'hover:text-dark hover:bg-gray-100',
-              'active:bg-white/80 disabled:bg-gray-200',
+              'bg-[#850000] text-black',
+              'hover:bg-[#b33939] hover:text-black',
+              'active:hover:bg-[#c23616]',
+              'disabled:hover:bg-[#c23616]',
             ],
             variant === 'dark' && [
               'bg-gray-900 text-white',
@@ -103,9 +99,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             className={clsxm(
               'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
               {
-                'text-white': ['primary', 'dark'].includes(variant),
+                'text-white': ['default', 'dark'].includes(variant),
                 'text-black': ['light'].includes(variant),
-                'text-primary-500': ['outline', 'ghost'].includes(variant),
               }
             )}
           >
@@ -113,18 +108,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           </div>
         )}
         {LeftIcon && (
-          <div
-            className={clsxm([
-              size === 'base' && 'mr-1',
-              size === 'sm' && 'mr-1.5',
-            ])}
-          >
+          <div className={clsxm([size === 'base' && 'mr-1.5'])}>
             <LeftIcon
               className={clsxm(
-                [
-                  size === 'base' && 'md:text-md text-md',
-                  size === 'sm' && 'md:text-md text-sm',
-                ],
+                [size === 'base' && 'md:text-md text-md'],
                 leftIconClassName
               )}
             />
@@ -134,16 +121,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {RightIcon && (
           <div
             className={clsxm([
-              size === 'base' && 'ml-1',
-              size === 'sm' && 'ml-1.5',
+              [size === 'base' && 'ml-1'],
+              [size === 'small' && 'ml-0'],
+              [size === 'large' && 'ml-4'],
             ])}
           >
             <RightIcon
               className={clsxm(
-                [
-                  size === 'base' && 'text-md md:text-md',
-                  size === 'sm' && 'md:text-md text-sm',
-                ],
+                [size === 'base' && 'text-md md:text-md'],
                 rightIconClassName
               )}
             />
