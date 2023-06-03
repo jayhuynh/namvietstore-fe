@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import * as React from 'react';
-import { GoTriangleDown, GoTriangleLeft } from 'react-icons/go';
+import { GoTriangleDown, GoTriangleUp } from 'react-icons/go';
 
 import clsxm from '@/lib/clsxm';
 
@@ -119,7 +119,7 @@ const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           <div className={clsxm('h-full w-[1px]', `bg-[${textColor}]`)}></div>
           {rightIcon && (
             <div className='mr-6'>
-              {isOpen ? <GoTriangleDown /> : <GoTriangleLeft />}
+              {isOpen ? <GoTriangleUp /> : <GoTriangleDown />}
             </div>
           )}
           {children}
