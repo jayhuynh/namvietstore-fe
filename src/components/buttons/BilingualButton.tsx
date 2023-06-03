@@ -4,8 +4,8 @@ import { GoTriangleDown, GoTriangleLeft } from 'react-icons/go';
 
 import clsxm from '@/lib/clsxm';
 
-import enFlag from '@/public/svg/enflag.svg';
-import vnFlag from '@/public/svg/vnflag.svg';
+import enFlag from '@/icons/enflag.svg';
+import vnFlag from '@/icons/vnflag.svg';
 
 const ButtonVariant = ['default', 'light', 'dark'] as const;
 const ButtonSize = ['base', 'large', 'small'] as const;
