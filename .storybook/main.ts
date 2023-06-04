@@ -6,6 +6,7 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-mdx-gfm',
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -14,7 +15,6 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-
   //Modify webpack config to add alias for @ symbol
   webpackFinal: async (storybookWebpackConfig) => {
     if (storybookWebpackConfig.resolve) {
@@ -27,7 +27,6 @@ const config: StorybookConfig = {
         '../'
       );
     }
-
     return storybookWebpackConfig;
   },
 };
