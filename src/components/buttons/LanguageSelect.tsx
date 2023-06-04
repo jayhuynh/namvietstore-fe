@@ -26,7 +26,6 @@ const LanguageSelect = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         options={options}
         rightIcon={props.rightIcon}
-        textColor={props.textColor}
         size={props.size}
         variant={props.variant}
       />

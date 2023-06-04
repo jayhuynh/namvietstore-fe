@@ -20,7 +20,6 @@ export type ButtonProps = {
   variant?: (typeof ButtonVariant)[number];
   size?: (typeof ButtonSize)[number];
   rightIcon?: boolean;
-  textColor?: string;
   options: OptionType[];
 } & React.ComponentPropsWithRef<'button'>;
 
@@ -53,10 +52,7 @@ const VariantArr: VariantType = {
 };
 
 const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { children, className, variant, size, rightIcon, textColor, options },
-    ref
-  ) => {
+  ({ children, className, variant, size, rightIcon, options }, ref) => {
     const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
     const [selectedLanguage, setSelectedLanguage] = React.useState<string>(
@@ -76,7 +72,7 @@ const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           onClick={() => setIsOpen(!isOpen)}
           className={clsxm(
             'inline-flex items-center justify-between rounded-[50px] font-normal leading-5',
-            `text-[${textColor}]`,
+            `text-[#850000]`,
             //#region  //*=========== Size ===========
             [size === 'base' && ['text-[18px]', 'h-[40px] w-[222px]']],
             [size === 'large' && ['text-[25px]', 'h-[50px] w-[280px]']],
@@ -101,7 +97,7 @@ const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           />
           <p
             className={clsxm(
-              `text-[${textColor}]`,
+              `text-[#850000]`,
               [size === 'base' && ['w-[93px]']],
               [size === 'large' && ['w-[130px]']],
               [size === 'small' && ['w-[100px]']]
@@ -109,7 +105,7 @@ const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           >
             {selectedLanguage === 'English' ? 'English' : 'Tiếng Việt'}
           </p>
-          <div className={clsxm('h-full w-[1px]', `bg-[${textColor}]`)}></div>
+          <div className={clsxm('h-full w-[1px]', `bg-[#850000]`)}></div>
           {rightIcon && (
             <div className='ml-2 mr-6'>
               {isOpen ? <GoTriangleUp /> : <GoTriangleDown />}
@@ -143,7 +139,7 @@ const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 onClick={() => handleChangeLanguage(option.label)}
                 className={clsxm(
                   'flex w-[90%] font-normal leading-5',
-                  `text-[${textColor}]`,
+                  `text-[#850000]`,
 
                   //#region  //*=========== Size ===========
                   [size === 'base' && ['p-2']],
