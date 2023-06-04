@@ -10,26 +10,25 @@ import vnFlag from '@/icons/vnflag.svg';
 const ButtonVariant = ['default', 'light', 'dark'] as const;
 const ButtonSize = ['base', 'large', 'small'] as const;
 
-type ButtonProps = {
+export type OptionType = {
+  icon: string;
+  label: string;
+  key: string;
+};
+
+export type ButtonProps = {
   variant?: (typeof ButtonVariant)[number];
   size?: (typeof ButtonSize)[number];
   rightIcon?: boolean;
   textColor?: string;
-  open: boolean;
+  options: OptionType[];
 } & React.ComponentPropsWithRef<'button'>;
-
-type LanguageType = {
-  name: Language;
-  flag: string;
-};
 
 type VariantType = {
   default: string[];
   light: string[];
   dark: string[];
 };
-
-type Language = 'English' | 'Tiếng Việt';
 
 const VariantArr: VariantType = {
   default: [
@@ -53,27 +52,20 @@ const VariantArr: VariantType = {
   ],
 };
 
-const LanguageArr: LanguageType[] = [
-  {
-    name: 'English',
-    flag: enFlag,
-  },
-  {
-    name: 'Tiếng Việt',
-    flag: vnFlag,
-  },
-];
-
 const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, className, variant, size, rightIcon, open, textColor }, ref) => {
-    const [isOpen, setisOpen] = React.useState<boolean>(open);
+  (
+    { children, className, variant, size, rightIcon, textColor, options },
+    ref
+  ) => {
+    const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
-    const [selectedLanguage, setSelectedLanguage] =
-      React.useState<Language>('English');
+    const [selectedLanguage, setSelectedLanguage] = React.useState<string>(
+      options[0].label
+    );
 
-    const handleChangeLanguage = (language: Language) => {
+    const handleChangeLanguage = (language: string) => {
       setSelectedLanguage(language);
-      setisOpen(false);
+      setIsOpen(false);
     };
 
     return (
@@ -81,7 +73,7 @@ const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         <button
           ref={ref}
           type='button'
-          onClick={() => setisOpen(!isOpen)}
+          onClick={() => setIsOpen(!isOpen)}
           className={clsxm(
             'inline-flex items-center justify-between rounded-[50px] font-normal leading-5',
             `text-[${textColor}]`,
@@ -109,6 +101,7 @@ const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           />
           <p
             className={clsxm(
+              `text-[${textColor}]`,
               [size === 'base' && ['w-[93px]']],
               [size === 'large' && ['w-[130px]']],
               [size === 'small' && ['w-[100px]']]
@@ -118,7 +111,7 @@ const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           </p>
           <div className={clsxm('h-full w-[1px]', `bg-[${textColor}]`)}></div>
           {rightIcon && (
-            <div className='mr-6'>
+            <div className='ml-2 mr-6'>
               {isOpen ? <GoTriangleUp /> : <GoTriangleDown />}
             </div>
           )}
@@ -144,10 +137,10 @@ const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
               //#endregion  //*======== Variants ===========
             )}
           >
-            {LanguageArr.map((language) => (
+            {options.map((option) => (
               <button
-                key={language.name}
-                onClick={() => handleChangeLanguage(language.name)}
+                key={option.key}
+                onClick={() => handleChangeLanguage(option.label)}
                 className={clsxm(
                   'flex w-[90%] font-normal leading-5',
                   `text-[${textColor}]`,
@@ -166,12 +159,12 @@ const BilingualButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 )}
               >
                 <Image
-                  src={language.flag}
+                  src={option.icon}
                   alt='Country Flag'
                   width={36}
                   height={17}
                 />
-                <p className='ml-2'>{language.name}</p>
+                <p className='ml-2'>{option.label}</p>
               </button>
             ))}
           </div>
