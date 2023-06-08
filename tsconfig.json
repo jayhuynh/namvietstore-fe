@@ -20,7 +20,7 @@
     },
     "incremental": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "custom-next-env.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx", "custom-next-env.d.ts", "src", ".ladle"],
   "exclude": ["node_modules"],
   "moduleResolution": ["node_modules", ".next", "node", "next-env.d.ts"]
 }

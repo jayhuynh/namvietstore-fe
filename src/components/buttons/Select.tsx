@@ -7,8 +7,8 @@ import clsxm from '@/lib/clsxm';
 import enFlag from '@/icons/enflag.svg';
 import vnFlag from '@/icons/vnflag.svg';
 
-const ButtonVariant = ['default', 'light', 'dark'] as const;
-const ButtonSize = ['base', 'large', 'small'] as const;
+export const ButtonVariant = ['default', 'light', 'dark'] as const;
+export const ButtonSize = ['base', 'large', 'small'] as const;
 
 export type OptionType = {
   icon: string;
@@ -16,7 +16,7 @@ export type OptionType = {
   key: string;
 };
 
-export type ButtonProps = {
+type ButtonProps = {
   variant?: (typeof ButtonVariant)[number];
   size?: (typeof ButtonSize)[number];
   rightIcon?: boolean;
