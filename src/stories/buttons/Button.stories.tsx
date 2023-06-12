@@ -1,63 +1,54 @@
-import { Meta } from '@storybook/react';
+import type { Story, StoryDefault } from '@ladle/react';
 import { GoPlus } from 'react-icons/go';
 
 import Button from '@/components/buttons/Button';
 
 export default {
   title: '@nv/components/buttons/Button',
-  component: Button,
-  args: {
-    variant: 'default',
-    size: 'base',
-  },
-} as Meta<typeof Button>;
+} satisfies StoryDefault<typeof Button>;
 
-export const Default = {
-  args: {
-    children: 'Đọc thêm',
-    rightIcon: GoPlus,
-  },
-};
+export const Default: Story = () => (
+  <Button variant='default' size='base' rightIcon={GoPlus} content='Đọc thêm' />
+);
 
-export const Small = {
-  args: {
-    variant: 'default',
-    children: 'Đọc thêm',
-    rightIcon: GoPlus,
-    size: 'small',
-  },
-};
+export const Large: Story = () => (
+  <Button
+    variant='default'
+    size='large'
+    rightIcon={GoPlus}
+    content='Đọc thêm'
+  />
+);
 
-export const Large = {
-  args: {
-    children: 'Đọc thêm',
-    rightIcon: GoPlus,
-    size: 'large',
-  },
-};
+export const Small: Story = () => (
+  <Button
+    variant='default'
+    size='small'
+    rightIcon={GoPlus}
+    content='Đọc thêm'
+  />
+);
 
-export const LeftIcon = {
-  args: {
-    children: 'Đọc thêm',
-    leftIcon: GoPlus,
-    size: 'base',
-  },
-};
+export const LeftIcon: Story = () => (
+  <Button variant='default' size='base' leftIcon={GoPlus} content='Đọc thêm' />
+);
 
-export const Loading = {
-  args: {
-    children: 'Đọc thêm',
-    rightIcon: GoPlus,
-    size: 'base',
-    isLoading: true,
-  },
-};
+export const Loading: Story = () => (
+  <Button
+    variant='default'
+    size='base'
+    leftIcon={GoPlus}
+    content='Đọc thêm'
+    isLoading={true}
+  />
+);
 
-export const Disabled = {
-  args: {
-    children: 'Đọc thêm',
-    rightIcon: GoPlus,
-    size: 'base',
-    disabled: true,
-  },
-};
+export const Disabled: Story = () => (
+  <Button
+    variant='default'
+    size='base'
+    rightIcon={GoPlus}
+    content='Đọc thêm'
+    disabled={true}
+  />
+);
