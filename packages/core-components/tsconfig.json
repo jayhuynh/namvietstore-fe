@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -12,15 +13,19 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "noImplicitAny": true,
+    "jsx": "react",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "~/*": ["./public/*"]
+      "core-ui": ["./src/index.ts"],
+      "@/*": ["./src/*"]
     },
-    "incremental": true
+    "typeRoots": ["./node_modules/@types", "./src/index.d.ts"]
   },
-  "include": ["**/*.ts", "**/*.tsx", "custom-next-env.d.ts", "src", ".ladle"],
-  "exclude": ["node_modules"],
-  "moduleResolution": ["node_modules", ".next", "node", "next-env.d.ts"]
+  "include": ["src"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

@@ -4,25 +4,37 @@ import { ImSpinner2 } from 'react-icons/im';
 
 import clsxm from '@/lib/clsxm';
 
-const ButtonVariant = ['default', 'light', 'dark'] as const;
-const ButtonSize = ['base', 'small', 'large'] as const;
+const ButtonVariants = {
+  default:
+    'bg-[#850000] text-white hover:bg-[#b33939] hover:text-white active:hover:bg-[#c23616] disabled:hover:bg-[#c23616]',
+  light:
+    'bg-[#850000] text-black hover:bg-[#b33939] hover:text-black active:hover:bg-[#c23616] disabled:hover:bg-[#c23616]',
+  dark: 'bg-gray-900 text-white border border-gray-600 hover:bg-gray-800 active:bg-gray-700 disabled:bg-gray-700',
+};
+
+const ButtonSizes = {
+  base: 'px-[7px] py-[4px] text-[16px] h-[40px] w-[105px]',
+  small: 'px-[8px] py-[5px] text-[12px] h-[35px] w-[80px]',
+  large: 'px-[10px] py-[6px] text-[18px] h-[60px] w-[135px]',
+};
+
+type ButtonVariant = keyof typeof ButtonVariants;
+type ButtonSize = keyof typeof ButtonSizes;
 
 type ButtonProps = {
   isLoading?: boolean;
-  variant?: (typeof ButtonVariant)[number];
-  size?: (typeof ButtonSize)[number];
+  variant?: ButtonVariant;
+  size?: ButtonSize;
   leftIcon?: IconType;
   rightIcon?: IconType;
   leftIconClassName?: string;
   rightIconClassName?: string;
   content?: string;
 } & React.ComponentPropsWithRef<'button'>;
-
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       children,
-      className,
       disabled: buttonDisabled,
       isLoading,
       variant = 'default',
@@ -43,57 +55,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type='button'
         disabled={disabled}
-        className={clsxm(
-          'inline-flex items-center rounded-sm text-justify font-normal leading-[19px]',
-          //#region  //*=========== Size ===========
-          [
-            size === 'base' && [
-              'px-[7px] py-[4px]',
-              'text-[16px]',
-              'h-[40px] w-[105px]',
-            ],
-          ],
-          [
-            size === 'small' && [
-              'px-[8px] py-[5px]',
-              'text-[12px]',
-              'h-[35px] w-[80px]',
-            ],
-          ],
-          [
-            size === 'large' && [
-              'px-[10px] py-[6px]',
-              'text-[18px]',
-              'h-[60px] w-[135px]',
-            ],
-          ],
-          //#endregion  //*======== Size ===========
-          //#region  //*=========== Variants ===========
-          [
-            variant === 'default' && [
-              'bg-[#850000] text-white',
-              'hover:bg-[#b33939] hover:text-white',
-              'active:hover:bg-[#c23616]',
-              'disabled:hover:bg-[#c23616]',
-            ],
-            variant === 'light' && [
-              'bg-[#850000] text-black',
-              'hover:bg-[#b33939] hover:text-black',
-              'active:hover:bg-[#c23616]',
-              'disabled:hover:bg-[#c23616]',
-            ],
-            variant === 'dark' && [
-              'bg-gray-900 text-white',
-              'border border-gray-600',
-              'hover:bg-gray-800 active:bg-gray-700 disabled:bg-gray-700',
-            ],
-          ],
-          //#endregion  //*======== Variants ===========
-          'disabled:cursor-not-allowed',
-          isLoading &&
-            'relative text-transparent transition-none hover:text-transparent disabled:cursor-wait',
-          className
-        )}
+        className={`${ButtonSizes[size]} ${ButtonVariants[variant]}`}
         {...rest}
       >
         {isLoading && (
@@ -120,7 +82,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           </div>
         )}
         {children}
-        <p>{content}</p>
+        <p>{content} ss</p>
         {RightIcon && (
           <div
             className={clsxm([
