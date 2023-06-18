@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BilingualButton from '@/components/buttons/Select';
+import Select from '@/components/buttons/Select';
 import {
   ButtonSize,
   ButtonVariant,
@@ -32,7 +32,7 @@ type LanguageSelectType = {
 const LanguageSelect = React.forwardRef<HTMLButtonElement, LanguageSelectType>(
   ({ rightIcon, size, variant }, ref) => {
     return (
-      <BilingualButton
+      <Select
         ref={ref}
         options={options}
         rightIcon={rightIcon}
