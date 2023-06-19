@@ -1,3 +1,8 @@
 import './tailwind.css';
 
-export * from './components';
+export {
+  type ButtonProps,
+  type DropdownButtonProps,
+  Button,
+  DropdownButton,
+} from './components';

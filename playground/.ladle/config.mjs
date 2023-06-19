@@ -1,6 +1,17 @@
 export default {
   stories: 'src/**/*.stories.{js,jsx,ts,tsx}',
+
   addons: {
+    width: {
+      options: {
+        xsmall: 320,
+        small: 480,
+        medium: 768,
+        large: 1024,
+      },
+      enabled: true, // the addon can be disabled
+      defaultValue: 0,
+    },
     a11y: {
       enabled: true,
     },
@@ -30,16 +41,6 @@ export default {
     theme: {
       enabled: true,
       defaultState: 'black',
-    },
-    width: {
-      enabled: true,
-      options: {
-        xsmall: 414,
-        small: 640,
-        medium: 768,
-        large: 1024,
-      },
-      defaultState: 0,
     },
   },
 };

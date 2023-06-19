@@ -1,24 +1,23 @@
 // vite.config.js
+import autoprefixer from 'autoprefixer';
 import { resolve } from 'path';
+import tailwindcss from 'tailwindcss';
 import { defineConfig } from 'vite';
-// import dts from 'vite-plugin-dts';
 // import typescript from '@rollup/plugin-typescript';
 // import tsConfigPaths from 'vite-tsconfig-paths';
 // import { nodeResolve } from '@rollup/plugin-node-resolve';
 // import { babel } from '@rollup/plugin-babel';
 // import commonjs from '@rollup/plugin-commonjs';
-
 import { UserConfigExport } from 'vite';
-import tailwindcss from 'tailwindcss';
-import autoprefixer from 'autoprefixer';
+import dts from 'vite-plugin-dts';
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 const app = async (): Promise<UserConfigExport> =>
   defineConfig({
     plugins: [
-      // dts({
-      //   include: 'src',
-      //   insertTypesEntry: true,
-      // }),
+      dts({
+        include: 'src',
+        insertTypesEntry: true,
+      }),
       // tsConfigPaths(),
       // nodeResolve({ extensions }),
       // commonjs(),
