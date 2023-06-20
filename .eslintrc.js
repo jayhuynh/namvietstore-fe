@@ -7,8 +7,6 @@ module.exports = {
   plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports'],
   extends: [
     'eslint:recommended',
-    'next',
-    'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
@@ -18,13 +16,6 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/no-unescaped-entities': 'off',
     'react/display-name': 'off',
-    'react/jsx-curly-brace-presence': [
-      'warn',
-      {
-        props: 'never',
-        children: 'never',
-      },
-    ],
     //#region  //*=========== Unused Import ===========
     '@typescript-eslint/no-unused-vars': 'off',
     'unused-imports/no-unused-imports': 'warn',
