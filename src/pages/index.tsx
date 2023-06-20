@@ -49,7 +49,6 @@ export default function HomePage() {
               href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
               className='mt-4'
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 width='92'
                 height='32'
