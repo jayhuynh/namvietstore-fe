@@ -49,7 +49,7 @@ const DropdownMenu = ({
     >
       <Menu.Items className='absolute right-0 z-10 sm:mt-1 lg:mt-2 w-56 origin-top-right divide-y divide-primary-100 rounded-md bg-white shadow-lg ring-1 ring-primary ring-opacity-5 focus:outline-none'>
         {options.map(({ label, icon, key }, index) => (
-          <div className='py-1' key={key}>
+          <div className='py-1 justify-center items-center flex' key={key}>
             <Menu.Item>
               <a
                 onClick={() => onSelectedChange(index)}
@@ -57,7 +57,7 @@ const DropdownMenu = ({
                   selected === index
                     ? 'bg-grey-100 text-black-900'
                     : 'text-black-700',
-                  'w-full sm:px-4 sm:py-2 lg:px-5 lg:py-3 sm:test-sm md:text-md lg:text-lg font-regular cursor-pointer inline-flex items-center'
+                  'w-11/12 my-2 sm:px-4 sm:py-2 lg:px-5 lg:py-3 sm:test-sm md:text-md rounded-md lg:text-lg font-regular cursor-pointer hover:bg-primary-100 inline-flex items-center'
                 )}
               >
                 {icon}
@@ -89,10 +89,10 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
 
     const { icon, label } = selectedOption;
     return (
-      <Menu as='div' className='relative font-Roboto inline-block text-left'>
+      <Menu as='div' className='relative font-primary inline-block text-left'>
         <div>
-          <Menu.Button ref={ref} className='w-full h-max'>
-            <div className='inline-flex items-center w-full justify-center rounded bg-white sm:test-sm md:text-md lg:text-lg font-regular text-black shadow-sm ring-1 ring-inset ring-primary hover:bg-gray-50'>
+          <Menu.Button ref={ref} className='h-max w-full'>
+            <div className='inline-flex items-center justify-center rounded bg-white sm:test-sm md:text-md lg:text-lg font-regular text-black shadow-sm ring-1 ring-inset ring-primary hover:bg-gray-50'>
               <div className='inline-flex items-center justify-between gap-x-4 sm:pl-4 sm:pr-3 sm:py-2 lg:pl-5 lg:pr-4 lg:py-3'>
                 {icon}
                 {label ?? 'Select'}
