@@ -1,25 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import BilingualButton from '@/components/buttons/Select';
+import BilingualButton from "@/components/buttons/Select";
 import {
   ButtonSize,
   ButtonVariant,
   OptionType,
-} from '@/components/buttons/Select';
+} from "@/components/buttons/Select";
 
-import enFlag from '@/icons/enflag.svg';
-import vnFlag from '@/icons/vnflag.svg';
+import enFlag from "@/icons/enflag.svg";
+import vnFlag from "@/icons/vnflag.svg";
 
 const options: OptionType[] = [
   {
     icon: enFlag,
-    label: 'English',
-    key: 'en',
+    label: "English",
+    key: "en",
   },
   {
     icon: vnFlag,
-    label: 'Tiếng Việt',
-    key: 'vn',
+    label: "Tiếng Việt",
+    key: "vn",
   },
 ];
 
