@@ -21,10 +21,11 @@ module.exports = {
       },
 
       fontSize: {
+        xs: '12px',
         sm: '14px',
         md: '16px',
-        lg: '20px',
-        xl: '24px',
+        lg: '18px',
+        xl: '20px',
         '2xl': '32px',
         '3xl': '48px',
         '4xl': '64px',
@@ -69,6 +70,7 @@ module.exports = {
       borderRadius: {
         none: '0',
         DEFAULT: '50px',
+        xs: '2px',
         sm: '25px',
         lg: '100px',
         full: '9999px',
