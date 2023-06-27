@@ -17,7 +17,6 @@ export const Default: Story<ButtonProps> = () => (
       size="base"
       rightIcon={GoPlus}
       content="Đọc thêm"
-      link="https://www.google.com/"
     />
   </div>
 );
@@ -29,7 +28,6 @@ export const Large: Story<ButtonProps> = () => (
       size="large"
       rightIcon={GoPlus}
       content="Đọc thêm"
-      link="https://www.google.com/"
     />
   </div>
 );
@@ -41,7 +39,6 @@ export const Small: Story<ButtonProps> = () => (
       size="small"
       rightIcon={GoPlus}
       content="Đọc thêm"
-      link="https://www.google.com/"
     />
   </div>
 );
@@ -53,7 +50,6 @@ export const LeftIcon: Story<ButtonProps> = () => (
       size="base"
       leftIcon={GoPlus}
       content="Đọc thêm"
-      link="https://www.google.com/"
     />
   </div>
 );
@@ -66,7 +62,6 @@ export const Loading: Story<ButtonProps> = () => (
       leftIcon={GoPlus}
       content="Đọc thêm"
       isLoading={true}
-      link="https://www.google.com/"
     />
   </div>
 );
@@ -79,7 +74,6 @@ export const Disabled: Story<ButtonProps> = () => (
       rightIcon={GoPlus}
       content="Đọc thêm"
       disabled={true}
-      link="https://www.google.com/"
     />
   </div>
 );

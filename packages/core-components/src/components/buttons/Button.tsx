@@ -31,6 +31,7 @@ export type ButtonProps = {
   leftIconClassName?: string;
   rightIconClassName?: string;
   content?: string;
+  onClick?: () => void;
 } & React.ComponentPropsWithRef<'button'>;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -40,7 +41,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       disabled: buttonDisabled,
       isLoading,
-      link,
       variant = 'default',
       size = 'base',
       leftIcon: LeftIcon,
@@ -48,17 +48,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       leftIconClassName,
       rightIconClassName,
       content,
+      onClick,
       ...rest
     },
     ref
   ) => {
     const disabled = isLoading || buttonDisabled;
-
-    const handleOnClick = () => {
-      if (link) {
-        window.open(link, '_blank');
-      }
-    };
 
     return (
       <button
@@ -73,7 +68,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             'relative text-transparent transition-none hover:text-transparent disabled:cursor-wait',
           className
         )}
-        onClick={handleOnClick}
+        onClick={onClick}
         {...rest}
       >
         {isLoading && (
