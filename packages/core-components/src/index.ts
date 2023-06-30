@@ -6,3 +6,4 @@ export {
   Button,
   DropdownButton,
 } from './components';
+export { type ContentType, StatisticSection } from './layout';
