@@ -29,4 +29,13 @@ export default {
   title: "@nv-fe/core-ui/layout/StatisticSection",
 } satisfies StoryDefault<typeof StatisticSection>;
 
-export const Default: Story = () => <StatisticSection content={content} />;
+export const Default: Story = () => (
+  <div
+    style={{
+      width: "100%",
+      backgroundColor: "black",
+    }}
+  >
+    <StatisticSection content={content} />
+  </div>
+);

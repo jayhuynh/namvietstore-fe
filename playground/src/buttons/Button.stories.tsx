@@ -11,69 +11,51 @@ export default {
 } satisfies StoryDefault<typeof Button>;
 
 export const Default: Story<ButtonProps> = () => (
-  <div style={{ float: "right" }}>
-    <Button
-      variant="default"
-      size="base"
-      rightIcon={GoPlus}
-      content="Đọc thêm"
-    />
-  </div>
+  <Button variant="default" size="base" rightIcon={GoPlus} content="Đọc thêm" />
+);
+
+export const NoIcon: Story<ButtonProps> = () => (
+  <Button variant="default" size="large" content="Submit" />
 );
 
 export const Large: Story<ButtonProps> = () => (
-  <div style={{ float: "right" }}>
-    <Button
-      variant="default"
-      size="large"
-      rightIcon={GoPlus}
-      content="Đọc thêm"
-    />
-  </div>
+  <Button
+    variant="default"
+    size="large"
+    rightIcon={GoPlus}
+    content="Đọc thêm"
+  />
 );
 
 export const Small: Story<ButtonProps> = () => (
-  <div style={{ float: "right" }}>
-    <Button
-      variant="default"
-      size="small"
-      rightIcon={GoPlus}
-      content="Đọc thêm"
-    />
-  </div>
+  <Button
+    variant="default"
+    size="small"
+    rightIcon={GoPlus}
+    content="Đọc thêm"
+  />
 );
 
 export const LeftIcon: Story<ButtonProps> = () => (
-  <div style={{ float: "right" }}>
-    <Button
-      variant="default"
-      size="base"
-      leftIcon={GoPlus}
-      content="Đọc thêm"
-    />
-  </div>
+  <Button variant="default" size="base" leftIcon={GoPlus} content="Đọc thêm" />
 );
 
 export const Loading: Story<ButtonProps> = () => (
-  <div style={{ float: "right" }}>
-    <Button
-      variant="default"
-      size="base"
-      leftIcon={GoPlus}
-      content="Đọc thêm"
-      isLoading={true}
-    />
-  </div>
+  <Button
+    variant="default"
+    size="base"
+    leftIcon={GoPlus}
+    content="Đọc thêm"
+    isLoading={true}
+  />
 );
 
 export const Disabled: Story<ButtonProps> = () => (
-  <div style={{ float: "right" }}>
-    <Button
-      variant="default"
-      size="base"
-      rightIcon={GoPlus}
-      content="Đọc thêm"
-      disabled={true}
-    />
-  </div>
+  <Button
+    variant="default"
+    size="base"
+    rightIcon={GoPlus}
+    content="Đọc thêm"
+    disabled={true}
+  />
 );
