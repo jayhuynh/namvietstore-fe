@@ -10,6 +10,7 @@ import { defineConfig } from 'vite';
 // import commonjs from '@rollup/plugin-commonjs';
 import { UserConfigExport } from 'vite';
 import dts from 'vite-plugin-dts';
+import svgr from 'vite-plugin-svgr';
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 const app = async (): Promise<UserConfigExport> =>
   defineConfig({
@@ -26,6 +27,7 @@ const app = async (): Promise<UserConfigExport> =>
       //   extensions,
       //   babelHelpers: 'bundled',
       // }),
+      svgr(),
     ],
     css: {
       postcss: {
