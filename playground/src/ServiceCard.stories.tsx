@@ -5,29 +5,42 @@ import React from "react";
 import "regenerator-runtime/runtime";
 import "@namviet-fe/core-ui/dist/style.css";
 
-import { ServiceCard } from "@namviet-fe/core-ui";
-import { ContentType } from "@namviet-fe/core-ui";
+import {
+  ServiceCard,
+  type ServiceCardContentType,
+  ProductIcon,
+} from "@namviet-fe/core-ui";
 
-const content: ContentType = {
-  icon: "",
+const content: ServiceCardContentType = {
+  icon: <ProductIcon />,
   title: "Sản phẩm",
   description: "Đội ngũ giàu kinh nghiệm, có chuyên môn",
 };
 
 export default {
-  title: "@nv/components/ServiceCard",
+  title: "@nv-fe/core-ui/ServiceCard",
 } satisfies StoryDefault<typeof ServiceCard>;
 
-export const Default: Story = () => <ServiceCard content={content} />;
-
-export const Dark: Story = () => (
-  <ServiceCard content={content} variant="dark" />
+export const Default: Story = () => (
+  <div
+    style={{
+      width: "100%",
+      padding: "20px",
+      backgroundColor: "black",
+    }}
+  >
+    <ServiceCard content={content} />{" "}
+  </div>
 );
 
-export const Large: Story = () => (
-  <ServiceCard content={content} size="large" />
-);
-
-export const Small: Story = () => (
-  <ServiceCard content={content} size="small" />
+export const NoContent: Story = () => (
+  <div
+    style={{
+      width: "100%",
+      padding: "20px",
+      backgroundColor: "black",
+    }}
+  >
+    <ServiceCard />
+  </div>
 );
