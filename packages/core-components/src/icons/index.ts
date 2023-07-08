@@ -5,3 +5,4 @@ export { ReactComponent as PlusIcon } from './plus.svg';
 export { ReactComponent as ProductIcon } from './product.svg';
 export { ReactComponent as UserIcon } from './user.svg';
 export { ReactComponent as ViIcon } from './vnflag.svg';
+export { ReactComponent as WhitePlusIcon } from './whiteplus.svg';
