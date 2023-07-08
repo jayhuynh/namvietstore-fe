@@ -1,6 +1,10 @@
 import StatisticSection, {
-  type ContentType,
+  type StatisticContentType,
   type StatisticSectionProps,
 } from '@/components/sections/StatisticSection';
 
-export { type ContentType, type StatisticSectionProps, StatisticSection };
+export {
+  type StatisticContentType,
+  type StatisticSectionProps,
+  StatisticSection,
+};
