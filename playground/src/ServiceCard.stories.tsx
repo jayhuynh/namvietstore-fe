@@ -27,6 +27,8 @@ export const Default: Story = () => (
       width: "100%",
       padding: "20px",
       backgroundColor: "black",
+      display: "flex",
+      justifyContent: "center",
     }}
   >
     <ServiceCard content={content} />{" "}
@@ -39,6 +41,8 @@ export const NoContent: Story = () => (
       width: "100%",
       padding: "20px",
       backgroundColor: "black",
+      justifyContent: "center",
+      display: "flex",
     }}
   >
     <ServiceCard />
