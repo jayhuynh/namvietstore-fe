@@ -29,7 +29,7 @@ const ServiceCard: React.FC<ServiceCardType> = ({
         <>
           {content.icon}
           <p
-            className={`mt-3 md:text-xl font-bold md:leading-6  text-primary ${titleClassName}`}
+            className={`mt-3 md:text-xl font-bold md:leading-6 sm:text-lg text-primary ${titleClassName}`}
           >
             {content.title}
           </p>
