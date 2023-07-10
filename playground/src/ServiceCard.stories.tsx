@@ -12,7 +12,7 @@ import {
 } from "@namviet-fe/core-ui";
 
 const content: ServiceCardContentType = {
-  icon: <ProductIcon />,
+  icon: <ProductIcon className="w-full h-auto" />,
   title: "Sản phẩm",
   description: "Đội ngũ giàu kinh nghiệm, có chuyên môn",
 };
