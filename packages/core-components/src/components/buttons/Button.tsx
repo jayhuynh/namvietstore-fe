@@ -47,9 +47,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <ImSpinner2 className='animate-spin' />
           </div>
         )}
-        {leftIcon && <div>{leftIcon}</div>}
+        {leftIcon && (
+          <div className='md:w-3.5 md:h-3.5 sm:w-2.5 sm:h-2.5'>{leftIcon}</div>
+        )}
         <div>{children}</div>
-        {rightIcon && <div>{rightIcon}</div>}
+        {rightIcon && (
+          <div className='md:w-3.5 md:h-3.5 sm:w-2.5 sm:h-2.5'>{rightIcon}</div>
+        )}
       </button>
     );
   }
