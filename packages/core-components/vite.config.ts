@@ -28,9 +28,9 @@ const app = async (): Promise<UserConfigExport> =>
       //   babelHelpers: 'bundled',
       // }),
       svgr({
-          svgrOptions: {
-              dimensions: false,
-          },
+        svgrOptions: {
+          dimensions: false,
+        },
       }),
     ],
     css: {

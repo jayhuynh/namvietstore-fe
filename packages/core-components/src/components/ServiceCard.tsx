@@ -27,7 +27,7 @@ const ServiceCard: React.FC<ServiceCardType> = ({
     >
       {content && (
         <>
-          <div className="md:w-28 md:h-28 sm:w-10 sm:h-10 flex items-center justify-center">
+          <div className='md:w-28 md:h-28 sm:w-10 sm:h-10 flex items-center justify-center'>
             {content.icon}
           </div>
           <p
